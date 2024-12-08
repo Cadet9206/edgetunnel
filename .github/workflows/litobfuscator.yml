@@ -3,7 +3,7 @@ name: litObfuscate and Commit
 on:
     push:
         paths:
-            - '明文源码.js'
+            - '旧明文源码.js'
     workflow_dispatch:
 
 jobs:
@@ -28,10 +28,10 @@ jobs:
       - name: Obfuscate code
         run: |
            javascript-obfuscator 旧明文源码.js --output _worker.js \
-           --compact true \ 
-           --identifier-names-generator hexadecimal \ 
-           --rename-globals true \  
-           --unicode-escape-sequence true   
+            --compact true \ 
+            --identifier-names-generator hexadecimal \ 
+            --rename-globals true \  
+            --unicode-escape-sequence true   
 
 
       - name: Commit changes
