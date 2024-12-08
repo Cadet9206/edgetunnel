@@ -28,12 +28,12 @@ jobs:
       - name: Obfuscate code
         run: |
            javascript-obfuscator 明文源码.js --output _worker.js \
-           --compact true \
-           --identifier-names-generator hexadecimal \
-           --rename-globals true \
-           --string-array true \
-           --string-array-threshold 1 \
-           --unicode-escape-sequence true
+           --compact true \  # 压缩
+           --identifier-names-generator hexadecimal \   # 使用特定规则（如十六进制）重命名变量和函数
+           --rename-globals true \   # 重命名全局变量和函数
+           # --string-array true \   # 将字符串转换为数组
+           # --string-array-threshold 1 \   # 设置需要转换为数组的字符串比例
+           --unicode-escape-sequence true    # 将字符串转换为 Unicode 转义序列
 
 
       - name: Commit changes
